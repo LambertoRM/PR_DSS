@@ -1,0 +1,60 @@
+(En ./iniciar.sh){
+composer update
+
+cp .env.example .env
+
+php artisan key:generate
+
+php artisan serve
+}
+
+
+-------------------------------------------
+--COSAS QUE HACER AL ARRANCAR EL PROYECTO--
+-------------------------------------------
+
+Seguir los siguiente pasos:
+
+1-git clone "url github"
+2-git checkout "rama en la que quieres trabajar"
+3-./iniciar.sh
+4-Ir a .env y cambiar:    DB_DATABASE=dss           DB_USERNAME=dss            DB_PASSWORD=dss
+5-php artisan migrate
+6-php artisan db:seed
+
+
+
+
+
+
+--------------------------------------------
+--CUANDO SE ESTÁ TRABAJANDO EN EL PROYECTO--
+--------------------------------------------
+
+-Si se hace cualquier cambio en el visual studio, guardar antes de hacer comandos con el terminal
+-Si se cambia alguna migración (que para esta entrega ya no hace falta) -> php artisan migrate:reset -> php artisan migrate
+-Si se cambia algún seeder (que para esta entrega ya no debería hacer falta) o notas algo raro en las seeds
+ y quieres reiniciarlas -> php artisan migrate:fresh --seed
+
+
+
+
+
+
+ -----------------------
+ --PARA HACER LOS TEST--
+ -----------------------
+
+ -Para crear un test en la carpeta Feature:   php artisan make:test "NombreTest"
+ -Para crear un test en la carpeta Unit:      php artisan make:test "NombreTest" --unit
+ -Para pasar los tests:                       vendor/bin/phpunit
+
+
+
+
+
+
+
+ 
+
+
